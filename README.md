@@ -1,4 +1,38 @@
-# Astro Starter Kit: Basics
+# Dynamic Image issues
+
+using pnpm for this one!
+
+this works as expected:
+```
+pnpm astro dev
+```
+
+when you build:
+```
+pnpm astro dev
+```
+it wont build
+
+astro ver: 4.10.2
+
+stack:
+```
+ generating optimized images
+[CouldNotTransformImage] Could not transform image `/_astro/stock1.DFGDu3WZ.jpeg`. See the stack trace for more information.
+  Hint:
+    This is often caused by a corrupted or malformed image. Re-exporting the image from your image editor may fix this issue.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/could-not-transform-image/
+  Stack trace:
+    at generateImageInternal (file:/astro-burner-deleteme/callous-chasm/node_modules/.pnpm/astro@4.10.2/node_modules/astro/dist/assets/build/generate.js:131:21)
+    at async file:/astro-burner-deleteme/callous-chasm/node_modules/.pnpm/p-queue@8.0.1/node_modules/p-queue/dist/index.js:187:36
+  Caused by:
+  Could not find Sharp. Please install Sharp (`sharp`) manually into your project or migrate to another image service.
+    at loadSharp (file:/astro-burner-deleteme/callous-chasm/dist/chunks/astro/assets-service_DXJYOm0c.mjs:503:11)
+    at async generateImageInternal (file:/astro-burner-deleteme/callous-chasm/node_modules/.pnpm/astro@4.10.2/node_modules/astro/dist/assets/build/generate.js:125:26)
+    at async file:/astro-burner-deleteme/callous-chasm/node_modules/.pnpm/p-queue@8.0.1/node_modules/p-queue/dist/index.js:187:36
+ ELIFECYCLE  Command failed with exit code 1.
+```
 
 ```sh
 npm create astro@latest -- --template basics
